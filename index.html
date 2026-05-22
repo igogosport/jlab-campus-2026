@@ -14,26 +14,45 @@
     --jlab-yellow: #ffd400;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
   body {
     font-family: "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
-    background: #eaf4ff;
     color: #11243a;
     -webkit-font-smoothing: antialiased;
-  }
-  .wrap {
-    max-width: 480px;
-    margin: 0 auto;
-    background: #fff;
+    background: linear-gradient(135deg, #1f8fff 0%, #0a6ad6 55%, #064a96 100%);
     min-height: 100vh;
-    box-shadow: 0 0 40px rgba(0,0,0,.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .stage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 海報卡片 */
+  .poster {
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
   }
   .banner { display: block; width: 100%; height: auto; }
-  .cta {
-    padding: 28px 22px 44px;
+
+  /* 按鈕區 */
+  .panel {
+    width: 100%;
+    background: #fff;
+    padding: 28px 22px 40px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    background: #fff;
+  }
+  .panel .lead {
+    display: none;
   }
   .btn {
     display: flex;
@@ -68,22 +87,80 @@
     text-align: center;
     font-size: 12px;
     color: #8aa0b8;
-    padding: 0 22px 28px;
+    padding: 0 22px 26px;
+  }
+
+  /* ===== 手機（預設）：單欄堆疊，最大 480px ===== */
+  .stage { max-width: 480px; }
+
+  /* ===== 平板 / 桌機：左海報、右按鈕兩欄 ===== */
+  @media (min-width: 880px) {
+    body { padding: 40px 24px; }
+    .stage {
+      max-width: 1040px;
+      flex-direction: row;
+      align-items: stretch;
+      background: #fff;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,.35);
+    }
+    .poster {
+      flex: 0 0 46%;
+      max-width: 480px;
+      display: flex;
+      align-items: center;
+    }
+    .banner { width: 100%; }
+    .panel {
+      flex: 1;
+      justify-content: center;
+      padding: 56px 56px;
+      gap: 22px;
+    }
+    .panel .lead {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .panel .lead h1 {
+      font-size: 34px;
+      line-height: 1.25;
+      color: var(--jlab-blue-dark);
+      font-weight: 900;
+    }
+    .panel .lead p {
+      margin-top: 14px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #41566e;
+    }
+    .btn { font-size: 20px; padding: 20px 24px; }
+    .foot {
+      position: relative;
+      padding: 18px 0 0;
+      text-align: left;
+    }
   }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <img class="banner" src="banner.png" alt="2026 JLab 第一屆校園大使招募中！和 JLab 一起，把聲音與風格帶進校園">
-    <div class="cta">
+  <div class="stage">
+    <div class="poster">
+      <img class="banner" src="banner.png" alt="2026 JLab 第一屆校園大使招募中！和 JLab 一起，把聲音與風格帶進校園">
+    </div>
+    <div class="panel">
+      <div class="lead">
+        <h1>2026 JLab 第一屆<br>校園大使招募中！</h1>
+        <p>和 JLab 一起，把聲音與風格帶進校園。5 個月任期，成為校園代表，累積作品、認識品牌行銷，為履歷加分。</p>
+      </div>
       <a class="btn btn-secondary" href="activity.pdf" target="_blank" rel="noopener">
         <span class="ic">📄</span><span>活動說明</span>
       </a>
       <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdq-xqoQJ8jBTl59akBlPhFnszJFtsrX16AcGe1WqYqUovU-Q/viewform?usp=dialog" target="_blank" rel="noopener">
         <span class="ic">✏️</span><span>立即報名</span>
       </a>
+      <div class="foot">© 2026 JLab 校園大使計畫</div>
     </div>
-    <div class="foot">© 2026 JLab 校園大使計畫</div>
   </div>
 </body>
 </html>
