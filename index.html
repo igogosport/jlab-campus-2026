@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 JLab 第一屆校園大使招募中！</title>
+<meta property="og:title" content="2026 JLab 第一屆校園大使招募中！">
+<meta property="og:description" content="和 JLab 一起，把聲音與風格帶進校園">
+<meta property="og:image" content="banner.png">
+<style>
+  :root {
+    --jlab-blue: #1f8fff;
+    --jlab-blue-dark: #0a6ad6;
+    --jlab-yellow: #ffd400;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    background: #eaf4ff;
+    color: #11243a;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 480px;
+    margin: 0 auto;
+    background: #fff;
+    min-height: 100vh;
+    box-shadow: 0 0 40px rgba(0,0,0,.08);
+  }
+  .banner { display: block; width: 100%; height: auto; }
+  .cta {
+    padding: 28px 22px 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #fff;
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 18px 20px;
+    border-radius: 16px;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    text-decoration: none;
+    transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+    cursor: pointer;
+  }
+  .btn:active { transform: translateY(1px) scale(.99); }
+  .btn-primary {
+    background: var(--jlab-blue);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(31,143,255,.35);
+  }
+  .btn-primary:hover { background: var(--jlab-blue-dark); }
+  .btn-secondary {
+    background: #fff;
+    color: var(--jlab-blue);
+    border: 2.5px solid var(--jlab-blue);
+  }
+  .btn-secondary:hover { background: #f0f8ff; }
+  .btn .ic { font-size: 22px; line-height: 1; }
+  .foot {
+    text-align: center;
+    font-size: 12px;
+    color: #8aa0b8;
+    padding: 0 22px 28px;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="banner" src="banner.png" alt="2026 JLab 第一屆校園大使招募中！和 JLab 一起，把聲音與風格帶進校園">
+    <div class="cta">
+      <a class="btn btn-secondary" href="activity.pdf" target="_blank" rel="noopener">
+        <span class="ic">📄</span><span>活動說明</span>
+      </a>
+      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdq-xqoQJ8jBTl59akBlPhFnszJFtsrX16AcGe1WqYqUovU-Q/viewform?usp=dialog" target="_blank" rel="noopener">
+        <span class="ic">✏️</span><span>立即報名</span>
+      </a>
+    </div>
+    <div class="foot">© 2026 JLab 校園大使計畫</div>
+  </div>
+</body>
+</html>
