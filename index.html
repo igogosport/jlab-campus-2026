@@ -14,7 +14,7 @@
     --jlab-yellow: #ffd400;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { height: 100%; }
+  html, body { min-height: 100%; }
   body {
     font-family: "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
     color: #11243a;
@@ -24,35 +24,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
   }
 
   .stage {
     width: 100%;
+    max-width: 480px;
+    background: #fff;
     display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-
-  /* 海報卡片 */
-  .poster {
-    width: 100%;
-    background: #fff;
     overflow: hidden;
   }
+
+  .poster { width: 100%; }
   .banner { display: block; width: 100%; height: auto; }
 
-  /* 按鈕區 */
   .panel {
     width: 100%;
     background: #fff;
-    padding: 28px 22px 40px;
+    padding: 26px 22px 36px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-  }
-  .panel .lead {
-    display: none;
+    gap: 15px;
   }
   .btn {
     display: flex;
@@ -87,59 +79,26 @@
     text-align: center;
     font-size: 12px;
     color: #8aa0b8;
-    padding: 0 22px 26px;
+    padding: 4px 22px 0;
   }
 
-  /* ===== 手機（預設）：單欄堆疊，最大 480px ===== */
-  .stage { max-width: 480px; }
-
-  /* ===== 平板 / 桌機：左海報、右按鈕兩欄 ===== */
+  /* ===== 平板 / 桌機：原圖直接放大置中（約螢幕 80% 高），單欄 ===== */
   @media (min-width: 880px) {
-    body { padding: 40px 24px; }
+    body { padding: 32px; }
     .stage {
-      max-width: 1040px;
-      flex-direction: row;
-      align-items: stretch;
-      background: #fff;
-      border-radius: 28px;
-      overflow: hidden;
+      width: auto;
+      max-width: 92vw;
+      border-radius: 24px;
       box-shadow: 0 30px 80px rgba(0,0,0,.35);
     }
-    .poster {
-      flex: 0 0 46%;
-      max-width: 480px;
-      display: flex;
-      align-items: center;
+    .banner {
+      width: auto;
+      max-width: 92vw;
+      height: 80vh;
+      max-height: 920px;
     }
-    .banner { width: 100%; }
-    .panel {
-      flex: 1;
-      justify-content: center;
-      padding: 56px 56px;
-      gap: 22px;
-    }
-    .panel .lead {
-      display: block;
-      margin-bottom: 8px;
-    }
-    .panel .lead h1 {
-      font-size: 34px;
-      line-height: 1.25;
-      color: var(--jlab-blue-dark);
-      font-weight: 900;
-    }
-    .panel .lead p {
-      margin-top: 14px;
-      font-size: 17px;
-      line-height: 1.7;
-      color: #41566e;
-    }
-    .btn { font-size: 20px; padding: 20px 24px; }
-    .foot {
-      position: relative;
-      padding: 18px 0 0;
-      text-align: left;
-    }
+    .panel { padding: 30px 40px 40px; gap: 18px; }
+    .btn { font-size: 20px; padding: 19px 24px; }
   }
 </style>
 </head>
@@ -149,10 +108,6 @@
       <img class="banner" src="banner.png" alt="2026 JLab 第一屆校園大使招募中！和 JLab 一起，把聲音與風格帶進校園">
     </div>
     <div class="panel">
-      <div class="lead">
-        <h1>2026 JLab 第一屆<br>校園大使招募中！</h1>
-        <p>和 JLab 一起，把聲音與風格帶進校園。5 個月任期，成為校園代表，累積作品、認識品牌行銷，為履歷加分。</p>
-      </div>
       <a class="btn btn-secondary" href="activity.pdf" target="_blank" rel="noopener">
         <span class="ic">📄</span><span>活動說明</span>
       </a>
